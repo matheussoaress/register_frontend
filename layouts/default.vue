@@ -1,0 +1,101 @@
+<template>
+  <v-app id="front-app">
+    <div id="header">
+      <v-system-bar app>
+        <v-spacer></v-spacer>
+      </v-system-bar>
+
+      <v-app-bar app>
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-toolbar-title> {{$store.state.title}} </v-toolbar-title>
+      </v-app-bar>
+
+      <v-navigation-drawer
+        v-model="drawer"
+        fixed
+        temporary
+      >
+        <!--  -->
+      </v-navigation-drawer>
+    </div>
+    <div>
+      <Nuxt />
+    </div>
+  </v-app>
+</template>
+
+<style>
+
+v-app-bar{
+  position: relative !important;
+}
+
+#header {
+  position: relative; top: 0; left: 0; height: 60px; width: 100%;
+}
+
+html {
+  font-family:
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.button--green {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #3b8070;
+  color: #3b8070;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.button--green:hover {
+  color: #fff;
+  background-color: #3b8070;
+}
+
+.button--grey {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-left: 15px;
+}
+
+.button--grey:hover {
+  color: #fff;
+  background-color: #35495e;
+}
+</style>
+
+<script>
+export default {
+  data() {
+    return {
+      drawer: null
+    }
+  }
+}
+</script>
